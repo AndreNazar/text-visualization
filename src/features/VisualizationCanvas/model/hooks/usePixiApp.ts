@@ -4,9 +4,9 @@ import { createPixiApp } from '../engine/createPixiApp'
 import { createPixiViewport } from '../engine/createPixiViewport'
 import { createPixiTooltip } from '../engine/createPixiTooltip'
 import { createPixiDot } from '../engine/createPixiDot'
-import type { DotType } from '../../types/dot.types'
+import type { PointType } from '@/entities/Point/types/Point.type'
 
-export function usePixiApp(containerRef: RefObject<HTMLDivElement | null>, dots: DotType[] = []) {
+export function usePixiApp(containerRef: RefObject<HTMLDivElement | null>, dots: PointType[] = []) {
   const appRef = useRef<Application | null>(null)
 
   useEffect(() => {
@@ -28,7 +28,14 @@ export function usePixiApp(containerRef: RefObject<HTMLDivElement | null>, dots:
       const tooltip = createPixiTooltip(app)
 
       dots.forEach(dot => {
-        createPixiDot(tooltip, viewport, dot.x, dot.y, dot.color, dot.text)
+        createPixiDot(
+          tooltip,
+          viewport,
+          dot.x * 100 + 800,
+          dot.y * 100,
+          dot.color || 0xff0000,
+          dot.text,
+        )
       })
     }
 
@@ -42,5 +49,5 @@ export function usePixiApp(containerRef: RefObject<HTMLDivElement | null>, dots:
         appRef.current = null
       }
     }
-  }, [containerRef])
+  }, [containerRef, dots])
 }

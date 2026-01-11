@@ -7,8 +7,8 @@ export function createPixiViewport(app: Application) {
   })
 
   viewport.drag().pinch().wheel().decelerate()
-  viewport.clampZoom({ minHeight: 200, maxWidth: 10000 })
-  viewport.setZoom(0.7, true)
+  viewport.clampZoom({ minHeight: 10, maxWidth: 5000 })
+  viewport.setZoom(0.8)
 
   app.stage.addChild(viewport)
   return viewport

@@ -10,7 +10,7 @@ export function createPixiDot(
   color: number,
   text: string,
 ) {
-  const dot = new Graphics().circle(0, 0, 5).fill(color).stroke({ width: 1, color: 0x000000 })
+  const dot = new Graphics().circle(0, 0, 2).fill(color).stroke({ width: 0.1, color: 0x000000 })
 
   dot.position.set(x, y)
 
@@ -18,11 +18,11 @@ export function createPixiDot(
 
   dot.onpointerenter = () => {
     dot.clear()
-    dot.circle(0, 0, 10).fill(color).stroke({ width: 1, color: 0x000000 })
+    dot.circle(0, 0, 3).fill(color).stroke({ width: 0.1, color: 0x000000 })
   }
   dot.onpointerleave = () => {
     dot.clear()
-    dot.circle(0, 0, 5).fill(color).stroke({ width: 1, color: 0x000000 })
+    dot.circle(0, 0, 2).fill(color).stroke({ width: 0.1, color: 0x000000 })
     tooltip.hide()
   }
 
