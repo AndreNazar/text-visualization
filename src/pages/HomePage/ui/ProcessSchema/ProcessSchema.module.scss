@@ -1,0 +1,17 @@
+.process_schema {
+    display: flex;
+    gap: 40px;
+    justify-content: space-around;
+    align-items: center;
+
+    .process_wrapper {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+
+        .mini_glass_blocks {
+            display: grid;
+            gap: 20px;
+        }
+    }
+}

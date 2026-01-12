@@ -1,0 +1,14 @@
+.container {
+    position: relative;
+    overflow: hidden;
+
+    .content {
+        width: 1000px;
+        margin: 0 auto;
+        display: grid;
+        gap: 120px;
+        margin-top: 120px;
+        padding-bottom: 40px;
+        justify-items: center;
+    }
+}

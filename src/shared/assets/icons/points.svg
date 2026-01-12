@@ -1,62 +1,4 @@
-import { memo } from 'react'
-import styles from './HomePage.module.scss'
-import cn from 'classnames'
-
-function HomePageComponent() {
-  return (
-    <div className={styles.container}>
-      <div className={cn(styles.ball, styles.ball_1)}></div>
-      <div className={cn(styles.ball, styles.ball_2)}></div>
-      <div className={styles.content}>
-        <div>
-          <h1 className={styles.title}>Context Atlas</h1>
-          <p className={styles.subtitle}>Визуальный атлас ваших текстов</p>
-        </div>
-        <div className={styles.glass_blocks}>
-          <div className={cn(styles.glass_block, styles.glass_block_1)}>
-            <div className={styles.lines}>
-              <svg
-                width="210"
-                height="177"
-                viewBox="0 0 210 177"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect width="210" height="7.8202" rx="2" fill="white" />
-                <rect y="33.8202" width="210" height="7.8202" rx="2" fill="white" />
-                <rect y="67.6404" width="210" height="7.8202" rx="2" fill="white" />
-                <rect y="101.461" width="210" height="7.8202" rx="2" fill="white" />
-                <rect y="135.281" width="210" height="7.8202" rx="2" fill="white" />
-                <rect y="169.101" width="210" height="7.8202" rx="2" fill="white" />
-              </svg>
-            </div>
-          </div>
-          <div className={styles.process_wrapper}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="48px"
-              viewBox="0 -960 960 960"
-              width="48px"
-              fill="#00000088"
-            >
-              <path d="m560-242-43-42 168-168H160v-60h525L516-681l43-42 241 241-240 240Z" />
-            </svg>
-            <div className={styles.mini_glass_blocks}>
-              <div className={styles.mini_glass_block}>UMAP</div>
-              <div className={styles.mini_glass_block}>DBSCAN</div>
-            </div>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="48px"
-              viewBox="0 -960 960 960"
-              width="48px"
-              fill="#00000088"
-            >
-              <path d="m560-242-43-42 168-168H160v-60h525L516-681l43-42 241 241-240 240Z" />
-            </svg>
-          </div>
-          <div className={cn(styles.glass_block, styles.glass_block_2)}>
-            <svg
+ <svg
               width="168"
               height="164"
               viewBox="0 0 168 164"
@@ -134,12 +76,3 @@ function HomePageComponent() {
                 fill="white"
               />
             </svg>
-          </div>
-        </div>
-        <button className={styles.startButton}>Начать</button>
-      </div>
-    </div>
-  )
-}
-
-export const HomePage = memo(HomePageComponent)
