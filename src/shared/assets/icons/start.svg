@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <mask id="playSymbolMask">
+    <rect width="100%" height="100%" fill="white"></rect>
+    <polygon points="10,8 17,12 10,16" fill="black"></polygon>
+  </mask>
+  <circle cx="12" cy="12" r="7.8" mask="url(#playSymbolMask)" id="filledCircle" fill="#e3e3e3"></circle>
+</svg>

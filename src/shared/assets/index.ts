@@ -1,3 +1,6 @@
 export { default as ArrowToRightIcon } from './icons/arrow-to-right.svg?react'
 export { default as LinesIcon } from './icons/lines.svg?react'
 export { default as PointsIcon } from './icons/points.svg?react'
+export { default as GoogleColabIcon } from './icons/google_colab.svg?react'
+export { default as AddIcon } from './icons/add.svg?react'
+export { default as StartIcon } from './icons/start.svg?react'

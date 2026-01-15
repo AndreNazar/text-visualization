@@ -1,8 +1,8 @@
 import { HashRouter, Route, Routes } from 'react-router-dom'
 import { GetStartedPage } from './pages/GetStartedPage'
 import { HomePage } from './pages/HomePage'
-import { VisualisationPage } from '@pages/VisualisationPage'
 import { Text } from '@ui/Text'
+import { VisualisationPage } from '@pages/VisualisationPage'
 
 function App() {
   return (

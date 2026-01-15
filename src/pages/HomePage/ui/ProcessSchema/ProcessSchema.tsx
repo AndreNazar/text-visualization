@@ -6,24 +6,20 @@ import styles from './ProcessSchema.module.scss'
 function ProcessSchemaComponent() {
   return (
     <div className={styles.process_schema}>
-      <GlassWrapper>
+      <div className={styles.big_block}>
         <LinesIcon />
-      </GlassWrapper>
+      </div>
       <div className={styles.process_wrapper}>
         <ArrowToRightIcon />
-        <div className={styles.mini_glass_blocks}>
-          <GlassWrapper w={80} h={50} r={3}>
-            UMAP
-          </GlassWrapper>
-          <GlassWrapper w={80} h={50} r={3}>
-            DBSCAN
-          </GlassWrapper>
+        <div className={styles.mini_blocks}>
+          <div className={styles.mini_block}>UMAP</div>
+          <div className={styles.mini_block}>DBSCAN</div>
         </div>
         <ArrowToRightIcon />
       </div>
-      <GlassWrapper>
+      <div className={styles.big_block}>
         <PointsIcon />
-      </GlassWrapper>
+      </div>
     </div>
   )
 }

@@ -38,8 +38,8 @@ function VisualisationPageComponent() {
     </div>
   )
 }
-
-export const VisualisationPage = memo(VisualisationPageComponent)
+const VisualisationPage = memo(VisualisationPageComponent)
+export default VisualisationPage
 
 function getColor(clusterIndex: number): number {
   if (clusterIndex === -1) return 0x666666

@@ -1,9 +1,19 @@
-import { memo, type PropsWithChildren } from 'react'
+import { memo, type CSSProperties, type PropsWithChildren } from 'react'
 import styles from './Button.module.scss'
+import cn from 'classnames'
 
-function ButtonComponent({ children, onClick }: PropsWithChildren & { onClick?: () => void }) {
+function ButtonComponent({
+  children,
+  onClick,
+  size = 'large',
+  style,
+}: PropsWithChildren & {
+  onClick?: () => void
+  size?: 'small' | 'medium' | 'large'
+  style?: CSSProperties
+}) {
   return (
-    <button className={styles.button} onClick={onClick}>
+    <button className={cn(styles.button, styles[size])} onClick={onClick} style={style}>
       {children}
     </button>
   )

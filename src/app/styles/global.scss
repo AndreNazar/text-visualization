@@ -4,9 +4,22 @@
     font-weight: 100 900;
 }
 
+@font-face {
+    font-family: 'GoogleSans';
+    src: url('../../shared/assets/fonts/GoogleSans-VariableFont_GRAD\,opsz\,wght.woff2');
+    font-weight: 100 900;
+}
+
 :root {
     font-family: "Montserrat";
     background-color: #a4a4a4;
+
+
+}
+
+a {
+    color: #ddf;
+    text-decoration: none;
 }
 
 h1,

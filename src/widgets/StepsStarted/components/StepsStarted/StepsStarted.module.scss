@@ -1,0 +1,54 @@
+@use '@styles/mixins' as *;
+
+.steps_started {
+    display: grid;
+    gap: 20px;
+    width: 100%;
+
+    color: #fff;
+
+    h1 {}
+
+    p {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .step_block {
+        @include wrapperBlock;
+        padding: 10px 20px;
+
+
+        svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .link {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+
+            svg {
+                width: 15px;
+                height: 15px;
+            }
+
+        }
+
+        .google_button {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            color: #e3e3e3;
+
+            font-family: 'GoogleSans';
+
+            svg {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+}

@@ -38,9 +38,10 @@ export default defineConfig({
       '@features': '/src/features',
       '@ui': '/src/shared/ui',
       '@lib': '/src/shared/lib',
+      '@api': '/src/shared/api',
+      '@assets': '/src/shared/assets/',
       '@entities': '/src/entities',
       '@pages': '/src/pages',
-      '@assets': '/src/shared/assets/',
     },
   },
 })
