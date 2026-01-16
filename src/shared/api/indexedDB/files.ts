@@ -1,3 +1,5 @@
+import type { DBItemType } from '@/shared/types/indexedDB.types'
+
 function openFilesDB(): Promise<IDBDatabase> {
   return new Promise((resolve, reject) => {
     const request = window.indexedDB.open('files-db')
@@ -35,7 +37,7 @@ export async function saveFileToDB(file: File) {
   })
 }
 
-export async function getFileFromDB(id: string) {
+export async function getFileFromDB(id: string): Promise<DBItemType> {
   return new Promise((resolve, reject) => {
     initStoreDB('readonly').then(store => {
       const req = store.get(id)
@@ -46,7 +48,7 @@ export async function getFileFromDB(id: string) {
   })
 }
 
-export async function getAllFilesFromDB() {
+export async function getAllFilesFromDB(): Promise<DBItemType[]> {
   return new Promise((resolve, reject) => {
     initStoreDB('readonly').then(store => {
       const req = store.getAll()

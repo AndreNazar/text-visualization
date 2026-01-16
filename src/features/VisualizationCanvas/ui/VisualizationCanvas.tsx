@@ -1,25 +1,23 @@
-import { useRef } from 'react'
-import {
-  HEIGHT_VISUALIZATION_CANVAS,
-  WIDTH_VISUALIZATION_CANVAS,
-} from '../lib/constants/layout.constant'
+import { useRef, type Dispatch, type SetStateAction } from 'react'
 import { usePixiApp } from '../model/hooks/usePixiApp'
-import type { PointType } from '@/entities/Point/types/Point.type'
+import { useVisualPoints } from '../model/hooks/useVisualPoints'
+import type { PointType } from '@entities/Point'
 
-function VisualizationCanvasComponent({ visualPoints }: { visualPoints: PointType[] }) {
+function VisualizationCanvasComponent({
+  visualPoints,
+  setVisualPoints,
+  setLabelsClusters,
+}: {
+  visualPoints: PointType[]
+  setVisualPoints: Dispatch<SetStateAction<PointType[]>>
+  setLabelsClusters: Dispatch<SetStateAction<number[]>>
+}) {
   const containerRef = useRef<HTMLDivElement | null>(null)
 
+  useVisualPoints(setVisualPoints, setLabelsClusters)
   usePixiApp(containerRef, visualPoints)
 
-  return (
-    <div
-      ref={containerRef}
-      style={{
-        width: `${WIDTH_VISUALIZATION_CANVAS}px`,
-        height: `${HEIGHT_VISUALIZATION_CANVAS}px`,
-      }}
-    />
-  )
+  return <div ref={containerRef} />
 }
 
 export const VisualizationCanvas = VisualizationCanvasComponent

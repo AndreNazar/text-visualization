@@ -4,7 +4,7 @@ export function clusterByDBSCAN(points: { x: number; y: number }[]) {
   const dataset = points.map(p => [p.x, p.y])
   const dbscan = new DBSCAN()
 
-  const clusters = dbscan.run(dataset, 0.15, 2)
+  const clusters = dbscan.run(dataset, 0.4, 2)
 
   const labels = new Array(points.length).fill(-1)
 
@@ -13,6 +13,5 @@ export function clusterByDBSCAN(points: { x: number; y: number }[]) {
       labels[pointIndex] = clusterIndex
     })
   })
-
   return labels
 }

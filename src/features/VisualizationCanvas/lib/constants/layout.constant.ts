@@ -1,2 +1,2 @@
-export const WIDTH_VISUALIZATION_CANVAS = 1500
-export const HEIGHT_VISUALIZATION_CANVAS = 700
+export const WIDTH_VISUALIZATION_CANVAS = window.innerWidth
+export const HEIGHT_VISUALIZATION_CANVAS = window.innerHeight - 115

@@ -1,5 +1,4 @@
 import { ArrowToRightIcon, LinesIcon, PointsIcon } from '@assets/index'
-import { GlassWrapper } from '@ui/GlassWrapper'
 import { memo } from 'react'
 import styles from './ProcessSchema.module.scss'
 

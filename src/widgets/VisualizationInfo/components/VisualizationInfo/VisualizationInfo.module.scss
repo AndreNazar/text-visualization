@@ -1,0 +1,44 @@
+@use '@styles/mixins' as *;
+
+.container {
+    @include wrapperBlock;
+    position: absolute;
+    display: grid;
+    align-content: start;
+    gap: 10px;
+    bottom: 50px;
+    right: 150px;
+    border-radius: 5px;
+    padding: 10px 20px;
+    width: 350px;
+    height: fit-content;
+    z-index: 100;
+
+    h4 {
+        text-align: center;
+        font-weight: 400;
+    }
+
+    p {
+        color: #fff;
+    }
+
+    span {
+        color: #fff;
+        font-weight: 200;
+    }
+
+    .big_cluster {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: #0005 1px solid;
+        margin-right: 5px;
+    }
+
+    .controls {
+        display: flex;
+        gap: 10px;
+    }
+
+}

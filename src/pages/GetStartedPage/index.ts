@@ -1,1 +1,1 @@
-export { GetStartedPage } from './ui/GetStarted.page'
+export { GetStartedPage } from './ui/GetStartedPage'

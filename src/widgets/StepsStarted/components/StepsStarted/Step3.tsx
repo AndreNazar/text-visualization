@@ -1,13 +1,12 @@
-import { StartIcon } from '@assets/index'
+import { FileLoader } from '@features/FileLoader'
 import styles from './StepsStarted.module.scss'
 
 export function Step3() {
   return (
     <div className={styles.step_block}>
       <h1>Шаг 3</h1>
-      <p>
-        Вставьте код в появившееся поле, затем запустите код, нажав на <StartIcon />
-      </p>
+      <p>Теперь нужно подождать когда загрузится json файл, затем загрузите его в поле ниже</p>
+      <FileLoader />
     </div>
   )
 }

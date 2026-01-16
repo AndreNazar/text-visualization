@@ -24,18 +24,12 @@ export function usePixiApp(containerRef: RefObject<HTMLDivElement | null>, dots:
 
       appRef.current = app
 
-      const viewport = createPixiViewport(app)
+      if (dots.length === 0) return
+      const viewport = createPixiViewport(app, dots[0].x * 100, dots[0].y * 100)
       const tooltip = createPixiTooltip(app)
 
       dots.forEach(dot => {
-        createPixiDot(
-          tooltip,
-          viewport,
-          dot.x * 100 + 800,
-          dot.y * 100,
-          dot.color || 0xff0000,
-          dot.text,
-        )
+        createPixiDot(tooltip, viewport, dot.x * 100, dot.y * 100, dot.color || 0xff0000, dot.text)
       })
     }
 

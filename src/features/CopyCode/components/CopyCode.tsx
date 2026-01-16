@@ -1,7 +1,13 @@
 import { Button } from '@ui/Button'
+import { useCallback, useState } from 'react'
+
+let timeoutId: number | null = null
 
 export function CopyCode({ arrayTexts }: { arrayTexts: string[] }) {
-  const copyToClipboard = () => {
+  const [isDone, setIsDone] = useState(false)
+
+  const copyToClipboard = useCallback(() => {
+    clearTimeout(timeoutId || 0)
     const partCode1 = `import json
 from sentence_transformers import SentenceTransformer
 from google.colab import files
@@ -32,13 +38,25 @@ with open(filename, "w", encoding="utf-8") as f:
     json.dump(data, f, ensure_ascii=False)
 
 files.download(filename)`
-    const copyFinal = partCode1 + arrayTexts.map(text => `"${text}"`) + partCode2
+    const copyFinal = partCode1 + arrayTexts.map(text => `'${text}'`) + partCode2
     navigator.clipboard.writeText(copyFinal)
-  }
+
+    setIsDone(true)
+    timeoutId = setTimeout(() => {
+      setIsDone(false)
+    }, 4000)
+  }, [arrayTexts])
 
   return (
-    <Button size="small" style={{ marginTop: '10px' }} onClick={copyToClipboard}>
-      Скопировать
+    <Button
+      size="small"
+      style={{
+        marginTop: '10px',
+        ...(isDone ? { boxShadow: 'none', color: '#cfc', cursor: 'default' } : {}),
+      }}
+      onClick={copyToClipboard}
+    >
+      {isDone ? 'Скопировано!' : 'Скопировать'}
     </Button>
   )
 }

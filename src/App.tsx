@@ -1,8 +1,9 @@
-import { HashRouter, Route, Routes } from 'react-router-dom'
+import { HashRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { GetStartedPage } from './pages/GetStartedPage'
 import { HomePage } from './pages/HomePage'
 import { Text } from '@ui/Text'
-import { VisualisationPage } from '@pages/VisualisationPage'
+import { VisualizationPage } from '@pages/VisualizationPage'
+import { HistoryPage } from '@pages/HistoryPage'
 
 function App() {
   return (
@@ -14,9 +15,11 @@ function App() {
         <Text>Визуальный атлас текстов</Text>
       </div>
       <Routes>
-        <Route path="/visualization" element={<VisualisationPage />} />
+        <Route path="/visualization/:id" element={<VisualizationPage />} />
         <Route path="/start" element={<GetStartedPage />} />
+        <Route path="/history" element={<HistoryPage />} />
         <Route path="/" element={<HomePage />} />
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </HashRouter>
   )

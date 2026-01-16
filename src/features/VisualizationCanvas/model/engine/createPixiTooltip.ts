@@ -6,7 +6,6 @@ export function createPixiTooltip(app: Application): TooltipType {
   tooltip.visible = false
 
   const tooltipBg = new Graphics()
-  tooltipBg.roundRect(0, 0, 300, 50, 2).fill(0xffffff)
 
   const tooltipText = new Text({
     text: 'Tooltip',
@@ -17,13 +16,23 @@ export function createPixiTooltip(app: Application): TooltipType {
       wordWrapWidth: 300,
     },
   })
+
   tooltipText.position.set(8, 6)
   tooltip.addChild(tooltipBg, tooltipText)
   app.stage.addChild(tooltip)
 
+  const updateBackground = () => {
+    const width = Math.min(tooltipText.width, 305) + 16
+    const height = Math.max(tooltipText.height, 15) + 13
+
+    tooltipBg.clear()
+    tooltipBg.roundRect(0, 0, width, height, 2).fill(0xffffff)
+  }
+
   return {
     show(content: string, x: number, y: number) {
       tooltipText.text = content
+      updateBackground()
       tooltip.position.set(x, y)
       tooltip.visible = true
     },

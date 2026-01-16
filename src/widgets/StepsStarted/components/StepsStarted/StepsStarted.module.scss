@@ -4,15 +4,15 @@
     display: grid;
     gap: 20px;
     width: 100%;
-
+    font-size: 16px;
     color: #fff;
 
-    h1 {}
-
     p {
-        display: flex;
-        align-items: center;
-        gap: 10px;
+        display: block;
+
+        >* {
+            vertical-align: middle;
+        }
     }
 
     .step_block {
@@ -26,9 +26,11 @@
         }
 
         .link {
-            display: flex;
+            display: inline-flex;
             align-items: center;
-            gap: 3px;
+            gap: 5px;
+            margin: 0 10px;
+            font-size: 16px;
 
             svg {
                 width: 15px;
@@ -38,16 +40,18 @@
         }
 
         .google_button {
-            display: flex;
+            display: inline-flex;
             align-items: center;
             gap: 3px;
             color: #e3e3e3;
+            margin-right: 10px;
+            font-size: 14px;
 
             font-family: 'GoogleSans';
 
             svg {
-                width: 20px;
-                height: 20px;
+                width: 14px;
+                height: 14px;
             }
         }
     }
